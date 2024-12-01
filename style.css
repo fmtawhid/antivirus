@@ -6,12 +6,80 @@
     margin: 0;
 }
 
+canvas {
+    position:absolute;
+    top:0;
+    left:0
+}
+
+
 .navbar{
     padding: 0;
     margin: 0;
-}
-.navbar-brand img{
+}/* Logo Styling */
+.navbar-brand img {
     height: 48px;
+    max-width: 100%; /* Ensures logo scales on smaller devices */
+}
+
+/* Text Styling with Gradient */
+.logo-txt {
+    background: linear-gradient(to right, #9f0b10, #ed1c24); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: -20px; /* Adjust spacing */
+    text-align: left; /* Ensures alignment */
+}
+
+/* Cobra Text */
+.c {
+    font-size: 25px;
+    margin-bottom: -10px;
+    font-weight: 900;
+}
+
+/* Antivirus Text */
+.a {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .logo-txt {
+        margin-left: 0; /* Remove negative margin for smaller screens */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .c {
+        font-size: 22px; /* Slightly smaller font for "Cobra" */
+    }
+
+    .a {
+        font-size: 14px; /* Slightly smaller font for "Antivirus" */
+    }
+
+    .navbar-brand img {
+        height: 40px; /* Reduce logo size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-txt {
+        margin-left: 0; /* Remove negative margin for smaller screens */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .c {
+        font-size: 22px; /* Slightly smaller font for "Cobra" */
+    }
+
+    .a {
+        font-size: 14px; /* Slightly smaller font for "Antivirus" */
+    }
+}
+.logo-txt{
+    margin-left: 1px;
 }
 .navbar-collapse {
     position: fixed;
@@ -79,18 +147,93 @@
     font-size: 24px;
     color: #000000;
 }
-.main-content{
-    background-image: url('img/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 520px;
+
+
+
+/* about us section */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
+
+.other-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px; /* Fixed height for the section */
+    background-image: url('/asset/img/background1.jpg'); /* Set your background image */
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+.text-content {
+    align-content: center;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin: auto;
+    z-index: 1; 
+}
+
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+.main-content {
+    position: relative; 
+    width: 100%;
+    height: 600px; /* Default height for larger screens */
+    overflow: hidden; /* Prevent any overflow */
+}
+
+
+#bgCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%; /* Canvas covers the entire section */
+    z-index: -1; /* Keeps the canvas behind all other elements */
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        height: 100vh; /* Smaller height for tablets and small screens */
+    }
+
+    .panel {
+        width: 100px; /* Adjust width for medium screens */
+        height: auto; /* Maintain aspect ratio */
+        background-size: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        height: 100vh; 
+    }
+
+    .panel {
+        width: 50px; /* Adjust width for small screens */
+        height: auto; /* Maintain aspect ratio */
+        background-size: contain;
+    }
+}
+
+
+
 .main-content img {
     width: 450px;
 }
 
 .hero-btn{
-    background-color: #00AF43;
+    background-color: #b52125;
     color: #fff;
     padding: 15px 40px !important;
     text-decoration: none;
@@ -103,12 +246,12 @@
 
 }
 .hero-btn:hover{
-    background-color: #00be49;
+    background-color: #c7262c;
 }
 
 
 .hero-btn1{
-    background-color: #00AF43;
+    background-color: #b52125;
     color: #fff;
     padding: 10px 40px !important;
     text-decoration: none;
@@ -121,10 +264,13 @@
 
 }
 .hero-btn1:hover{
-    background-color: #00be49;
+    background-color: #c7262c;
     color: white;
 }
-
+.hero-btn1:active{
+    background-color: #c7262c;
+    color: white;
+}
 
 
 .hero, h2, p{
@@ -229,7 +375,7 @@
 }
 
 .box-1:hover .btn-outline-secondary{
-    background-color: #28a745;
+    background-color: #b52125;
     color: #fff;
     
 }
@@ -243,7 +389,7 @@
 }
 
 .btn-outline-secondary {
-    border-color: #28a745;
+    border-color: #b52125;
     color: #696969;
     padding: 10px 24px; 
     text-decoration: none;
@@ -257,7 +403,7 @@
 
 }
 .section-2 {
-    background-color: #393939;
+    background-color: #111428;
     padding-top: 10px;
 }
 
@@ -523,7 +669,7 @@
 
 
 .section-6{
-    background-color: #393939;
+    background-color: #111428;
     color: #fff;
 }
 .section-6 h2{
@@ -701,7 +847,7 @@
 }
 
 .flip-card-back {
-    background-color: #e31e24;
+    background-color: #b52125;
     color: white;
     transform: rotateY(-180deg);
     display: flex;
@@ -745,14 +891,28 @@
 .requermentstyle{
     text-align: left;
     line-height: 30px;
-}
+} 
+.btnNav{
+    background-color: #b42624;
+    color: #ffffff;
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 5px;
 
+}
+.btnNav:hover{
+    background-color: #c93c39;
+    color: #e6e5e5;
+}
+.dropdown-item:active{
+    background-color: #c93c39;
+}
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
     .flip-card {
-        flex: 1 1 100%;  /* 1 card per row on mobile */
-        width: 100%;  /* Full width on mobile */
-        height: 400px;  /* Adjust height for mobile */
+        flex: 1 1 100%; 
+        width: 100%;  
+        height: 400px;  
     }
     .row_2 {
         justify-content: center;  /* Center cards on mobile */
@@ -768,12 +928,10 @@
         margin: 0;
         padding: 0;
     }
-    .main-content{
-        background-image: url('img/background1.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 95vh;
+    .logo-txt{
+        margin-left: -50px;
     }
+
     .mc{
         margin-top: 50px;
     }
@@ -872,5 +1030,206 @@
     .heroDiv{
         display: none;
     }
+    .abPhoto{
+        max-height: 150px;
+    }
 
+}
+.icon-hover i {
+    transition: color 0.3s ease;
+}
+
+.exl{
+    margin-left: -15px;
+}
+.exl-h{
+    margin-left: -27px;
+}
+
+.bf{
+    margin-bottom: -15px;
+}
+
+/* price section */ 
+
+
+.section {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.card-3d-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 340px;
+    height: 510px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+.card-3d-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 700ms ease-out;
+}
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    position: absolute;
+    border-radius: 6px;
+
+    border: 1px solid #ddd;
+    left: 0;
+    top: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112,.07);
+    
+}
+.card-back {
+    transform: rotateY(180deg);
+    
+}
+.flip {
+    transform: rotateY(180deg);
+}
+
+.pricing-wrap {
+    padding-top: 30px;
+    text-align: center;
+    
+}
+.pricing-wrap h4 {
+    font-size: 22px;
+    color: #a50d12;
+}
+.pricing-wrap h2 {
+    font-size: 26px;
+    color: #a50d12;
+}
+.pricing-wrap p {
+    font-size: 14px;
+    color: #a50d12;
+}
+
+
+/* Toggle Switch style */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #a50d12;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.switch-label {
+    font-size: 18px;
+    color: #a50d12;
+    margin: 0 10px;
+}
+/**  Payment **/
+
+.payment-container {
+
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 200px;
+}
+.btn-group .btn.active {
+    background-color: #b52125;
+    color: #fff;
+}
+.order-summary {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.order-summary h5 {
+    font-weight: bold;
+}
+.btn-purchase {
+    background-color: #b52125;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-purchase:hover {
+    background-color: #c7262c;
+    color: white;
+}
+.btnPayment{
+    border: 1px solid #b52125;
+}
+.btnPayment:hover{
+    background-color: #c7262c;
+    color: white;
+    border: 1px solid #b52125;
+}
+
+.support{
+    background-color: #242a33;
+}
+
+
+.section-about{
+    height: 90vh;
+    background-color: #041637;
+}
+.abPhoto{
+    max-width: 300px;
 }
